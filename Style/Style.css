@@ -50,6 +50,7 @@ h1 {
 	text-transform: lowercase;
 	width: 100%;
 	height: 400px;
+	
 }
 
 ::placeholder {
@@ -87,6 +88,11 @@ h1 {
 	width: 250px;
 	margin-right: 20px;
 }
+.boton-encriptar:hover{
+	background-color: #3d79d2;
+	
+
+}
 .copiar{
 	background-color: #d3dfe8;
 	border: 1px solid #0a3871;
@@ -97,12 +103,12 @@ h1 {
 	width: 250px;
 
 }
+.copiar:hover{
+	background-color: #3d79d2;
+	
+}
 .contenido-copiar{
 	padding-top:20px ;
-
-
-
-
 }
 .boton-desencriptar {
 	background-color: #d3dfe8;
@@ -112,6 +118,9 @@ h1 {
 	cursor: pointer;
 	height: 50px;
 	width: 250px;
+}
+.boton-desencriptar:hover{
+	background-color: #3d79d2;
 }
 
 .campo-encriptador {
