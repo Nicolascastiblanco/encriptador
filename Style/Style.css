@@ -1,90 +1,83 @@
- HEAD
-
-
+/* Global Styles */
 * {
 	background: #f3f5fc;
 	font-family: "Inter";
 	font-size: 32px;
-	
-}/*-------------------------
-	header
--------------------------*/
- .contenido-logo{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Header Styles */
+.contenido-logo {
 	width: 150px;
 	display: inline;
 	margin-bottom: 10px;
 }
 
-.logo{
+.logo {
 	padding: 10px;
 	width: 150px;
 	transform: rotate(2s);
-	/* animation-name: ejemplo;
-	animation-duration:  36s; */
-	
 }
-.logo:hover{
-	rotate: 300deg;
+
+.logo:hover {
+	transform: rotate(300deg);
 }
-/* @keyframes ejemplo {
-	0%   {background-color: red;}
-	25%  {background-color: yellow;}
-	50%  {background-color: blue;}
-	100% {background-color: green;}
-  }  */
-h1{
+
+h1 {
 	display: inline;
 	text-align: center;
 	margin-left: 300px;
-	
-}/*
------------------------
-	contenido
------------------------
-*/
-main{
-	padding-left: 75px;
-
-
 }
-.contenidoescritura{
+
+/* Main Content Styles */
+.contenido-escritura {
 	display: flex;
-	flex-direction: initial;
+	flex-direction: row; /* Alinea las secciones en fila */
+	justify-content: space-between; /* Espacia las secciones igualitariamente */
+	align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+}
 
-
-} 
+.campo-escritura {
+	flex: 1; /* Permite que este contenedor tome el espacio disponible */
+	margin-right: 20px; /* Espacio entre las secciones */
+}
 
 .text-area {
-	 border: none;
+	border: none;
 	color: #0a3871;
 	text-transform: lowercase;
-	width: 800px;
-	height: 400px
-	
-
+	width: 100%;
+	height: 400px;
 }
+
 ::placeholder {
 	color: #0a3871;
 }
+
 .text-area:focus {
 	outline: none;
 }
-.contenido-informacion{
+
+.contenido-informacion {
 	margin: 20px;
 }
-.informacion{
-	display: flex;
-	justify-content: space-around;
+
+.informacion {
 	color: #495057;
-    font-size: 18px;
-	font-style: inherit;
+	font-size: 18px;
 	margin: 8px 0 20px 0;
+	
 }
-.campo-botones{
+
+.campo-botones {
 	display: flex;
 	justify-content: space-around;
+	margin-top: 20px; /* Espacio superior para separar botones del textarea */
 }
-.botton-encriptar{
+
+.boton-encriptar {
 	background-color: #0a3871;
 	border: 1px solid #0a3871;
 	border-radius: 24px;
@@ -92,9 +85,9 @@ main{
 	cursor: pointer;
 	height: 50px;
 	width: 250px;
-    margin-right: 20px;
+	margin-right: 20px;
 }
-.botton-desencriptar{
+.copiar{
 	background-color: #d3dfe8;
 	border: 1px solid #0a3871;
 	border-radius: 24px;
@@ -104,44 +97,113 @@ main{
 	width: 250px;
 
 }
- .mensaje{
-	 background: white;
-	background-image: url("/imagenes/Muñeco.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	 border: none; 
-	border-radius: 24px;
-	color: #0a3871;
-	margin-left: 50px;
-	position:absolute;
-	width: 350px;
-	height: 450px;
-} 
-.mensaje:focus {
-	outline: none;
-}
+.contenido-copiar{
+	padding-top:20px ;
 
-.copiar{
+
+
+
+}
+.boton-desencriptar {
+	background-color: #d3dfe8;
 	border: 1px solid #0a3871;
 	border-radius: 24px;
 	color: #0a3871;
 	cursor: pointer;
 	height: 50px;
 	width: 250px;
-    margin-left: 95px;
-	position: absolute;
+}
+
+.campo-encriptador {
+	flex: 1; /* Permite que este contenedor tome el espacio disponible */
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Centra los elementos horizontalmente */
 	
-	top: 550px;
-/*
-_____________________
-	foooter
-______________________
 
-*/
 
-}footer,a img{
+}
+
+.mensaje {
+	background: white;
+	background-image: url("/imagenes/Muñeco.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	border-radius: 24px;
+	color: #0a3871;
+	width: 100%;
+	height: 450px;
+	overflow: aut
+}
+.imagen_linkd{
 	display: flex;
 	justify-content: center;
-	margin: 10px 15px ; 
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+	.contenido-escritura {
+		flex-direction: column; /* Cambia a columna para pantallas más pequeñas */
+	}
 	
+	.campo-escritura, .campo-encriptador {
+		flex: none; /* Remueve la flexibilidad para que los contenedores no se estiren */
+		width: 100%; /* Asegura que los contenedores ocupen todo el ancho disponible */
+		margin-right: 0; /* Remueve el margen derecho */
+	}
+	
+	.text-area {
+		height: 300px; /* Ajusta la altura para pantallas más pequeñas */
+	}
+	
+	.mensaje {
+		height: 300px; /* Ajusta la altura para pantallas más pequeñas */
+	}
+	
+	.boton-encriptar, .boton-desencriptar, .copiar {
+		width: 200px; /* Ajusta el ancho de los botones */
+
+		.informacion {
+			color: #495057;
+			font-size: 18px;
+			margin: 8px 0 20px 0;
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	/* Ajustes para pantallas muy pequeñas (tabletas y móviles) */
+	.text-area {
+		height: 200px; /* Ajusta la altura para pantallas más pequeñas */
+		font-size: 20px; /* Reduce el tamaño de la fuente */
+	}
+	
+	.mensaje {
+		height: 200px; /* Ajusta la altura para pantallas más pequeñas */
+	}
+	
+	.boton-encriptar, .boton-desencriptar, .copiar {
+		width: 150px; /* Ajusta el ancho de los botones */
+		font-size: 16px; /* Reduce el tamaño de la fuente */
+	}
+	
+	h1 {
+		margin-left: 0; /* Remueve el margen izquierdo para pantallas más pequeñas */
+	}
+	
+	.contenido-escritura {
+		flex-direction: column; /* Cambia a columna para pantallas más pequeñas */
+	
+		.informacion {
+			color: #495057;
+			font-size: 18px;
+			margin: 8px 0 20px 0;
+			display: flex;
+			justify-content: center;
+		}
+	}
+
 }
